@@ -8,12 +8,14 @@ pipeline {
         }
         stage('Build') {
             steps {
-                // Simulates compiling/running the application
-                sh 'python3 app.py'
+                // Simulates compiling/running the application on Windows
+                bat 'python3 app.py'
+                
                 // Wait for 15 seconds as instructed
                 sleep 15
+                
                 // Ensures older builds are superseded by newer ones reaching this checkpoint
-                milestone(1)
+                milestone 1
             }
         }
         stage('Send Notification') {
@@ -26,3 +28,4 @@ pipeline {
         }
     }
 }
+
