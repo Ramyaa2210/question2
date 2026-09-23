@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Simulates compiling/running the application on Windows
-                bat 'python3 app.py'
+                bat 'python app.py'
                 
                 // Wait for 15 seconds as instructed
                 sleep 15
